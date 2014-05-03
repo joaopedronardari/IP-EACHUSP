@@ -1,0 +1,191 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+		<title> Exercício-Programa 1 O caça-palavras </title>
+		<h1> Exercício-Programa 1 - O caça-palavras </h1>
+		<h3> Fábio Nakano, Norton Roman Trevisan, Márcio M. Ribeiro </h3>
+<div style="width:100%">
+<div style="float:left;width:50%">
+<p>Caça-palavras são considerados bons para treinar agilidade mental, busca 
+de padrões, ortografia (não será o caso desta vez...). O objetivo é encontrar 
+as palavras dadas em uma lista dentro do quadro de letras apresentado. No 
+exemplo ao lado, devemos procurar por LEAO, GATO, BOI, LOBO no quadro à 
+direita, acima. As palavras encontradas são destacadas à direita, abaixo.</p>
+<p>	Pode-se ver que as palavras podem estar na vertical ou na horizontal, 
+com as letras na ordem direta. Não há palavras nas diagonais.</p>
+<p>	O objetivo deste exercício-programa é escrever o método que encontra as
+palavras.</p>
+</div>
+<div style="float:right;width:50%">
+<table border="1"; cellspacing="1">
+<tr>
+<td>
+<pre>
+B B J U P W L I J B
+T O H H N R T H L C
+G I C T J F D Q J I
+A D N L V Z H N S O
+T P B W C L E A O P
+0 R B L T C I W K W
+K E H C J X B Y I X
+H T Z P A E T P L Z
+Z J J A X L O B O D
+J D L Y O B L R D Y
+</pre>
+</td>
+</tr>
+
+<tr>
+<td>
+<pre>
+  B                 
+  O                 
+G I                 
+A                   
+T         L E A O   
+o                   
+                    
+                    
+          L O B O   
+</pre>
+</td>
+</tr>
+</table>
+<br>
+</div>
+</div>
+<div style="width:100%;align:justify;">
+<p>
+Para isso você receberá o arquivo <b>Cacador.java</b>, que contém 
+cinco testes diferentes do apresentado acima. Os testes são 
+numerados de
+1 a 5 diretamente no identificador (nome) das variáveis.
+</p>
+<p>
+Cada teste é composto por:
+</p>
+
+<ul>
+<li>
+<em>quadro</em> - arranjo bidimensional de caracteres que representa o quadro onde procuramos as palavras - pode ter qualquer quantidade de linhas e de colunas; </li>
+<li>
+<em>palavras</em> - arranjo bidimensional de caracteres que contém as palavras que devem ser procuradas - pode ter qualquer quantidade de palavras (as palavras constituirão um arranjo de caracteres, havendo então um arranjo para esses arranjos de caracteres);
+</li>
+<li>
+<em>posicoes</em> - arranjo bidimensional de inteiros que conterá a coordenada (linha e coluna) de cada palavra encontrada (esta é a resposta);
+</li>
+</ul>
+<p>
+quadro[0][0] é o caracter no canto superior esquerdo do
+quadro. O primeiro índice corresponde ao índice das linhas
+e o segundo ao índice das colunas. De acordo com esta 
+convencao, quadro[3][5] corresponde ao caracter 'Z'. 
+</p>
+<p>
+Seu programa deve armazenar as coordenadas de cada palavra 
+encontrada no array
+<em>posicoes</em>. Note que seus elementos são inicializados
+com -1, que não é um índice válido. À medida que seu programa
+encontrar as palavras, deve escrever as coordenadas nas
+respectivas posições.</p>
+
+<p>
+Os elementos de mesmo índice de linha em <em>palavras</em> e 
+em <em>posicoes</em> tem que corresponder à uma mesma palavra,
+ou seja, se palavra[1] contém "GATO", então posicoes[1][0]
+deve conter 2 e posicoes[1][1] deve conter 0; se palavra[2] 
+contém "BOI", então posicoes[2][0] deve conter 0 e 
+posicioes[1][1] deve conter 1.
+</p>
+
+<p> Note que a posicao da palavra corresponde
+à posição da primeira letra da palavra.
+Nos testes fornecidos, ao lado de cada palavra estão anotados
+os valores que devem ser armazenados em <em>posicoes</em>.</p>
+
+<p>
+São fornecidos os métodos imprimeQuadro e imprimeResposta, que
+como os nomes dizem, imprimem o quadro e a resposta formatados.
+</p>
+
+<p>
+Você deve codificar o método cacaPalavras(...), que nos testes 
+será invocado exatamente como no exemplo que você recebeu. Seu
+método pode invocar outros métodos, você também pode declarar
+outras variáveis, inclusive globais, se necessário. A assinatura
+do método e sua acessibilidade não devem ser mudadas.
+</p>
+<!--
+<p>
+O método que retorna o caracter em uma certa posição de um String
+é <em>charAt()</em>, ou seja, se <code>String s="abacate";</code>
+então <code>s.charAt(5)</code> retorna 't'. O método que retorna
+o comprimento de um String é <em>length()</em>, ou seja, <code>
+s.length()</code> retornará 7.
+</p>
+-->
+<p>
+Lembre que o comprimento de um array está armazenado em <em>length</em>, ou
+seja, <em>quadro.length</em>, neste exemplo, contém o valor 10.
+</p>
+
+<p>
+Seus métodos devem ser escritos de modo a checar todos os erros 
+possíveis, de forma que quando executados, nunca provoquem erros 
+ou exceções, por exemplo:
+</p>
+<code>
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: NN <br />
+&nbsp;&nbsp;&nbsp;&nbsp;at CacadorDePalavras.buscaPalavraHorizontal(CacadorDePalavras.java:XX) <br />
+&nbsp;&nbsp;&nbsp;&nbsp;at CacadorDePalavras.cacaPalavras(CacadorDePalavras.java:XXX) <br />
+&nbsp;&nbsp;&nbsp;&nbsp;at TestaCacador.main(TestaCacador.java:XXX) <br />
+</code>
+<p>
+... em especial esta exceção informa que tentou-se acessar uma posição inexistente no array.
+</p>
+
+<h2>Avaliação</h2>
+
+<p>As soluções serão avaliadas pela clareza e formatação do código 
+(indentação, comentários, etc) e correção das respostas em testes 
+diferentes dos apresentados nos exemplos e que não serão 
+disponibilizados <i>a priori</i>. </p>
+
+<p>Se a solução causar erro ou exceção em determinado teste, receberá zero nesse teste. </p>
+
+<p>Receberão zero as soluções que:</p>
+<ul>
+<li>não compilarem;</li>
+<li>estiverem fora da especificação (inclusive formato de entrega e nome dos arquivos);</li>
+<li>não tiverem o cabeçalho preenchido;</li>
+<li>tiverem modificado outras classes;</li>
+<li>forem copiadas (detecção por sistema automático).</li>
+</ul>
+
+
+<h2>Entrega</h2>
+
+<p>O arquivo Cacador.java deve ser entregue, compactado em formato zip 
+com nome igual ao seu número usp. Ele não deve ser colocado em subdiretórios.
+Por exemplo, se seu nusp é 1234567, então o arquivo compactado deverá ser 
+<b>1234567.zip</b>, e deve conter apenas e somente o arquivo Cacador.java.
+Tenha o cuidado de entregar a última versão, checada, do ep correto (em outros
+anos já recebemos ep1 no lugar do ep2, versão inicial ao invés da versão
+final, etc.)
+</p>
+<p>A entrega deve ser feita exclusivamente através do Tidia até 
+<font color="red">12.05.2013</font>. 
+<b>Não serão aceitas entregas após este prazo</b>. </p>
+
+<h2>Dicas</h2>
+
+<p>Para evitar variações na indentação em função da relação entre espaços e TABs, recomenda-se que toda indentação seja feita com TABs e que se for possível no editor de texto escolhido, estes sejam ajustados para exibir recuo equivalente a 4 espaços. </p>
+
+<h2>Atenção</h2>
+
+<p>Evite o uso de acentos em seu código, nem nos comentários.</p>
+</div>
+</body>
+</html>

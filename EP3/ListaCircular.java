@@ -1,3 +1,15 @@
+/*******************************************************************/
+/** ACH2001 - Introducao a Programacao                            **/
+/** EACH-USP - Primeiro Semestre de 2013                          **/
+/** T.NN - Norton Roman Trevisan                                  **/
+/**                                                               **/
+/** Primeiros Exercicio-Programa                                  **/
+/**                                                               **/
+/** Joao Pedro Nardari dos Santos  8623865                        **/
+/**                                                               **/
+/** 14/06/2013                                                    **/
+/*******************************************************************/
+
 class ListaCircular{
 	Pessoa ultimo;
 
